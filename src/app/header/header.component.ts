@@ -1,13 +1,32 @@
 import { Component, OnInit } from "@angular/core";
 import { Router, ActivatedRoute, NavigationEnd } from "@angular/router";
 import { filter } from "rxjs/operators";
+import {
+  trigger,
+  state,
+  style,
+  animate,
+  transition
+} from "@angular/animations";
 
 @Component({
   selector: "app-header",
   templateUrl: "./header.component.html",
-  styleUrls: ["./header.component.scss"]
+  styleUrls: ["./header.component.scss"],
+  animations: [
+    trigger("fadeInOut", [
+      state(
+        "void",
+        style({
+          opacity: 0
+        })
+      ),
+      transition("void <=> *", animate(500))
+    ])
+  ]
 })
 export class HeaderComponent implements OnInit {
+  show = true;
   currentURL;
   parentURL;
   subNavs;
@@ -63,5 +82,9 @@ export class HeaderComponent implements OnInit {
         console.log(event);
         this.currentURL = this.router.url.split("/")[1];
       });
+  }
+  removeHeader() {
+    // alert("ds");
+    this.show = !this.show;
   }
 }
