@@ -1,0 +1,66 @@
+<header class="custom-header">
+  <nav class="main-nav">
+    <div class="app-logo"></div>
+    <nav class="nav-content">
+      <button
+        *ngFor="let nav of navs"
+        routerLink="/{{ nav.value }}"
+        routerLinkActive="active"
+        mat-button
+      >
+        {{ nav.value }}
+      </button>
+      <!-- <button routerLinkActive="active" mat-button>
+        Dashboard
+      </button>
+      <button routerLink="/Queue" routerLinkActive="active" mat-button>
+        Queue
+      </button>
+      <button routerLink="/CRM" routerLinkActive="active" mat-button>
+        CRM
+      </button>
+      <button routerLink="/Leaderboards" routerLinkActive="active" mat-button>
+        Leaderboards
+      </button>
+      <button routerLink="/Maintanence" routerLinkActive="active" mat-button>
+        Maintanence
+      </button>
+      <button routerLink="/Commisions" routerLinkActive="active" mat-button>
+        Commisions
+      </button> -->
+    </nav>
+
+    <figure class="avatar">A</figure>
+  </nav>
+  <nav class="sub-nav">
+    <ul class="nav nav-tabs">
+      <li *ngFor="let subNav of subNavs" class="nav-item">
+        <a
+          class="nav-link"
+          routerLink="/{{ currentURL }}/{{ subNav }}"
+          routerLinkActive="active"
+          >{{ subNav }}</a
+        >
+      </li>
+      <!-- <li class="nav-item">
+        <a
+          class="nav-link"
+          routerLink="/Dashboard/History"
+          routerLinkActive="active"
+          >History</a
+        >
+      </li>
+      <li class="nav-item">
+        <a
+          class="nav-link"
+          routerLink="/Dashboard/Manage"
+          routerLinkActive="active"
+          >Manage</a
+        >
+      </li> -->
+    </ul>
+  </nav>
+</header>
+{{ currentURL }}
+{{ subNavs | json }}
+{{ parentURL }}
