@@ -2,6 +2,12 @@ import { BrowserModule } from "@angular/platform-browser";
 import { NgModule } from "@angular/core";
 import { HttpClientModule, HTTP_INTERCEPTORS } from "@angular/common/http";
 
+import { MatDatepickerModule } from "@angular/material/datepicker";
+import { MatFormFieldModule } from "@angular/material/form-field";
+import { MatInputModule } from "@angular/material/input";
+import { MatIconModule } from "@angular/material/icon";
+import { ReactiveFormsModule } from "@angular/forms";
+
 import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
 import { JwtInterceptorService } from "./jwt-interceptor.service";
@@ -17,19 +23,28 @@ import { ProtectedComponentComponent } from "./protected-component/protected-com
 import { UnprotectedComponentComponent } from "./unprotected-component/unprotected-component.component";
 import { AuthService } from "./auth.service";
 import { HeaderComponent } from "./header/header.component";
+import { CustomDatePickerComponent } from "./custom-date-picker/custom-date-picker.component";
+import { MatNativeDateModule } from "@angular/material/core";
 
 @NgModule({
   declarations: [
     AppComponent,
     ProtectedComponentComponent,
     UnprotectedComponentComponent,
-    HeaderComponent
+    HeaderComponent,
+    CustomDatePickerComponent
   ],
   imports: [
     BrowserModule,
+    MatIconModule,
+    ReactiveFormsModule,
     HttpClientModule,
+    MatFormFieldModule,
     MatMenuModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
     MatButtonModule,
+    MatInputModule,
     MatProgressBarModule,
     LoadingBarHttpClientModule,
     LoadingBarModule,
@@ -37,6 +52,7 @@ import { HeaderComponent } from "./header/header.component";
     BrowserAnimationsModule
   ],
   providers: [
+    MatDatepickerModule,
     {
       provide: HTTP_INTERCEPTORS,
       useClass: JwtInterceptorService,

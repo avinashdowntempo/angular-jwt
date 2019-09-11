@@ -1,0 +1,41 @@
+::ng-deep .mat-input-underline {
+  display: none !important;
+}
+::ng-deep .mat-form-field-underline {
+  display: none !important;
+}
+
+.divider {
+  border-left: 1px solid #a0a0a0;
+  display: inline;
+  margin: 10px;
+}
+.mat-form-field {
+  width: 5rem !important;
+}
+:host {
+  border: 1px solid #a0a0a0;
+  display: inline-block;
+  border-radius: 3px;
+  margin-left: 10px;
+  padding: 5px;
+}
+.calendar {
+  margin-right: 10px;
+  color: #4889f1;
+  transform: scale(0.9);
+}
+input {
+  font-weight: 500;
+  font-size: 0.9rem;
+}
+
+::ng-deep .mat-form-field-appearance-legacy .mat-form-field-wrapper {
+  padding-bottom: 0px !important;
+}
+::ng-deep .mat-form-field-infix {
+  border-top: 0px !important;
+}
+button:focus {
+  outline: 0px;
+}

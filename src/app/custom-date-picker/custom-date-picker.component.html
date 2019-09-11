@@ -1,0 +1,43 @@
+<button mat-icon-button class="calendar" (click)="picker.open()">
+  <mat-icon svgIcon="calendar2"></mat-icon>
+</button>
+<mat-form-field [floatLabel]="'never'" class="example-full-width">
+  <mat-datepicker #picker></mat-datepicker>
+  <input
+    (click)="picker.open()"
+    [formControl]="date"
+    matInput
+    [readonly]="'true'"
+    [matDatepicker]="picker"
+    placeholder="Choose a date"
+  />
+</mat-form-field>
+<button mat-icon-button (click)="prevDay1()">
+  <mat-icon>keyboard_arrow_left</mat-icon>
+</button>
+<button mat-icon-button (click)="nextDay1()">
+  <mat-icon>keyboard_arrow_right</mat-icon>
+</button>
+<div class="divider"></div>
+<!--------------------------->
+<!-- 
+<button mat-icon-button (click)="picker2.open()">
+  <mat-icon svgIcon="calendar2"></mat-icon>
+</button> -->
+<mat-form-field [floatLabel]="'never'" class="example-full-width">
+  <mat-datepicker #picker2></mat-datepicker>
+  <input
+    (click)="picker.open()"
+    [formControl]="date2"
+    matInput
+    [readonly]="'true'"
+    [matDatepicker]="picker2"
+    placeholder="Choose a date"
+  />
+</mat-form-field>
+<button mat-icon-button (click)="prevDay2()">
+  <mat-icon>keyboard_arrow_left</mat-icon>
+</button>
+<button mat-icon-button (click)="nextDay2()">
+  <mat-icon>keyboard_arrow_right</mat-icon>
+</button>
