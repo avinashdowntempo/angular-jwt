@@ -1,0 +1,24 @@
+:host {
+  display: flex;
+  width: 100%;
+  background: blue;
+  background-image: linear-gradient(to right, #2c4bbf, #78adda);
+  height: 50px;
+  border-radius: 5px;
+}
+div {
+  margin: 2px;
+  min-width: 50px;
+  border-right: 1px solid white;
+  display: flex;
+  align-items: center;
+  color: white;
+  align-content: center;
+  padding: 10px;
+  &:last-child {
+    border-right: 0px;
+  }
+  label {
+    margin-bottom: 0px;
+  }
+}

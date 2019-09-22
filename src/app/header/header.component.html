@@ -1,5 +1,5 @@
 <header *ngIf="show" [@fadeInOut] class="custom-header">
-  <nav class="main-nav">
+  <nav #boundary class="main-nav">
     <div class="app-logo"></div>
     <nav class="nav-content">
       <button
@@ -12,7 +12,30 @@
       </button>
     </nav>
 
-    <figure class="avatar">A</figure>
+    <figure
+      #popperTargetElement
+      [popper]="popper1Content"
+      [popperTrigger]="'hover'"
+      [popperPlacement]="'bottom'"
+      [popperBoundaries]="'body'"
+      [popperPreventOverflow]="'true'"
+      [popperApplyClass]="'popper-content'"
+      [popperTarget]="popperTargetElement.nativeElement"
+      (popperOnShown)="onShown($event)"
+      class="avatar"
+    >
+      A
+    </figure>
+
+    <popper-content #popper1Content>
+      <div class="pops">
+        <div class="no-margin"><span></span>profile</div>
+        <div class="no-margin"><span></span>notifation</div>
+        <span class="divider"></span>
+        <div class="no-margin">settings</div>
+        <div class="no-margin">logout</div>
+      </div>
+    </popper-content>
   </nav>
   <nav class="sub-nav">
     <ul class="nav nav-tabs">
@@ -32,5 +55,26 @@
 {{ parentURL }}
 <button (click)="removeHeader()">remove header</button>
 <br />
-<app-custom-date-picker></app-custom-date-picker>
+
+<app-sub-header>
+  <app-custom-date-picker></app-custom-date-picker>
+  <app-custom-dropdown
+    [filter]="'state'"
+    [values]="state"
+  ></app-custom-dropdown>
+  <app-custom-dropdown [filter]="'city'" [values]="state"></app-custom-dropdown>
+  <app-custom-dropdown
+    [filter]="'level'"
+    [values]="state"
+  ></app-custom-dropdown>
+  <app-custom-dropdown
+    [filter]="'status'"
+    [values]="state"
+  ></app-custom-dropdown>
+</app-sub-header>
+<app-client-strip></app-client-strip>
+<app-agent-strip></app-agent-strip>
+<app-task-card></app-task-card>
+<app-task-card></app-task-card>
+<app-task-card></app-task-card>
 <app-custom-table-grid></app-custom-table-grid>

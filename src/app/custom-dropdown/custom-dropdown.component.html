@@ -1,0 +1,27 @@
+<div class="dropdown-wrapper">
+  {{ filter }}<span class="counter">{{ length }}</span
+  ><span
+    #popperTargetElement
+    class="drop"
+    [popper]="tooltipcontent"
+    [popperTrigger]="'hover'"
+    [popperPlacement]="'bottom'"
+    [popperBoundaries]="'body'"
+    [popperPreventOverflow]="'true'"
+    [popperApplyClass]="'popper-content'"
+    [popperTarget]="popperTargetElement.nativeElement"
+    >v</span
+  >
+</div>
+
+<popper-content #tooltipcontent>
+  <div class="check-container">
+    <mat-checkbox
+      *ngFor="let option of options"
+      value="{{ option.value }}"
+      [(ngModel)]="option.checked"
+      (change)="getLength()"
+      >{{ option.name }}</mat-checkbox
+    >
+  </div>
+</popper-content>

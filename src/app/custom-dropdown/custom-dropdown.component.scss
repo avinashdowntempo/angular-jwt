@@ -1,0 +1,35 @@
+.dropdown-wrapper {
+  display: flex;
+  align-items: center;
+  align-content: center;
+  text-transform: capitalize;
+  &:hover {
+    border-bottom: 1px solid gray;
+  }
+}
+.counter {
+  display: inline-flex;
+  width: 20px;
+  text-transform: capitalize;
+  text-align: center;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  margin-left: 10px;
+  margin-right: 5px;
+  height: 20px;
+  background: #ff6060;
+  color: white;
+  border-radius: 50%;
+}
+.check-container {
+  display: flex;
+  flex-direction: column;
+  min-width: 100px;
+}
+.drop {
+  cursor: pointer;
+}
+:host {
+  margin-right: 20px;
+}

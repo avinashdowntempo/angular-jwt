@@ -1,0 +1,34 @@
+:host {
+  display: flex;
+  width: 50%;
+  height: 70px;
+}
+div {
+  border-radius: 5px;
+  margin: 2px;
+  min-width: 50px;
+  display: flex;
+  align-items: center;
+  color: white;
+  align-content: center;
+  padding: 10px;
+  label {
+    margin-bottom: 0px;
+  }
+}
+.life {
+  background: #3573ff;
+  //   width: 50%;
+}
+.annuity {
+  background: #76d82c;
+  //   width: 10%;
+}
+.debt {
+  background: #ffaf1e;
+  //   width: 10%;
+}
+.student-loan {
+  background: #d6d6d6;
+  //   width: 10%;
+}
